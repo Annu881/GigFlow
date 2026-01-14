@@ -1,104 +1,125 @@
-# 🚀 GigFlow - Premium Freelance Marketplace
+# 🚀 GigFlow: The Ultimate Freelance Marketplace
 
-[![MERN Stack](https://img.shields.io/badge/Stack-MERN-blue.svg)](https://mongodb.com)
-[![Socket.io](https://img.shields.io/badge/Real--time-Socket.io-black.svg)](https://socket.io)
-[![License-MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+![GigFlow Banner](https://raw.githubusercontent.com/Annu881/GigFlow/main/screenshots/dashboard.png)
 
-GigFlow is a modern, high-performance freelance marketplace platform built with the MERN stack. It features a sleek glassmorphism UI, real-time notifications, and a robust bidding system.
+GigFlow is a premium, full-stack freelance marketplace designed for speed, security, and a seamless user experience. Built with the **MERN Stack** (MongoDB, Express, React, Node.js) and powered by **Socket.io** for real-time interactions, it offers a modern alternative to traditional platforms.
 
 ---
 
-## 📺 Project Demo
-**[Watch the Full Walkthrough Video](https://drive.google.com/file/d/1oEtK5ehhGbLvIwj4b6tKwk95sfg9NUak/view?usp=sharing)**
+## 📺 Live Demo & Walkthrough
+Experience GigFlow in action: **[Watch the Demo Video](https://drive.google.com/file/d/1oEtK5ehhGbLvIwj4b6tKwk95sfg9NUak/view?usp=sharing)**
 
 ---
 
 ## ✨ Key Features
 
-### 🛠️ For Clients (Gig Owners)
-- **Post Gigs**: Create detailed project listings with categories and budgets.
-- **Manage Bids**: Review applications from freelancers in real-time.
-- **One-Click Hiring**: Seamlessly hire the best candidate (automatically rejects other bids).
-- **Gig Management**: Delete or update your posted gigs easily.
-- **Real-time Alerts**: Get notified instantly when someone bids on your gig.
+### 💎 Premium User Experience
+- **Glassmorphism UI**: A stunning, modern interface with vibrant gradients and smooth transitions.
+- **Real-time Notifications**: Instant alerts for new gigs, bids, and hiring status via Socket.io.
+- **Responsive Design**: Fully optimized for Desktop, Tablet, and Mobile devices.
+
+### 🛠️ For Clients (Project Owners)
+- **Effortless Posting**: Create gigs with detailed descriptions, categories, and budgets.
+- **Bid Management**: Review all freelancer proposals in one centralized dashboard.
+- **Smart Hiring**: One-click hiring that automatically manages bid statuses and notifies the freelancer.
+- **Gig Control**: Full CRUD capabilities to manage your project listings.
 
 ### 💼 For Freelancers
-- **Browse Opportunities**: Search and filter through open gigs.
-- **Smart Bidding**: Submit professional proposals with custom pricing.
-- **Instant Notifications**: Get a "🎉 Hired" alert the moment a client chooses you.
-- **My Bids Dashboard**: Track the status of all your applications.
+- **Advanced Search**: Find the perfect project using real-time search and category filters.
+- **Professional Bidding**: Submit proposals with custom messages and competitive pricing.
+- **Status Tracking**: Monitor all your active bids and their current status (Pending, Hired, Rejected).
 
 ---
 
-## 📸 Screenshots
+## 📸 Visual Overview
 
-### 🖥️ Dashboard - My Posted Gigs
-![My Posted Gigs](https://raw.githubusercontent.com/Annu881/GigFlow/main/screenshots/dashboard.png)
-
-### 📄 Gig Details & Bidding
-![Gig Details](https://raw.githubusercontent.com/Annu881/GigFlow/main/screenshots/gig_details.png)
+| Dashboard View | Gig Details & Bidding |
+| :---: | :---: |
+| ![Dashboard](https://raw.githubusercontent.com/Annu881/GigFlow/main/screenshots/dashboard.png) | ![Gig Details](https://raw.githubusercontent.com/Annu881/GigFlow/main/screenshots/gig_details.png) |
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Technology Stack
 
-- **Frontend**: React.js, Vite, Redux Toolkit, Tailwind CSS, Socket.io-client
-- **Backend**: Node.js, Express.js, Socket.io, JWT (HttpOnly Cookies)
-- **Database**: MongoDB + Mongoose
-- **Styling**: Modern Glassmorphism & Gradient UI
+### Frontend
+- **React 18** (Vite) for blazing-fast performance.
+- **Redux Toolkit** for robust state management.
+- **Tailwind CSS** for a modern, utility-first design system.
+- **Socket.io-client** for real-time bidirectional communication.
+
+### Backend
+- **Node.js & Express** for a scalable API architecture.
+- **MongoDB & Mongoose** for flexible and efficient data storage.
+- **Socket.io** for real-time event handling.
+- **JWT (JSON Web Tokens)** with HttpOnly cookies for secure authentication.
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start Guide
 
-### 1. Clone & Install
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/Annu881/GigFlow.git
 cd gigflow
 ```
 
-### 2. Backend Setup
+### 2. Backend Configuration
 ```bash
 cd backend
 npm install
-# Create .env with MONGO_URI, JWT_SECRET, and CLIENT_URL
+```
+Create a `.env` file in the `backend` directory:
+```env
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_super_secret_key
+PORT=5000
+CLIENT_URL=http://localhost:5173
+```
+Start the backend:
+```bash
 npm run dev
 ```
-> [!TIP]
-> The backend now includes **automated port clearing**. If port 5000 is in use, it will automatically clear it before starting!
+> [!NOTE]
+> **Smart Port Management**: The backend automatically detects and clears port 5000 if it's already in use, ensuring a smooth development experience.
 
-### 3. Frontend Setup
+### 3. Frontend Configuration
 ```bash
 cd ../frontend
 npm install
-# Create .env with VITE_API_URL and VITE_SOCKET_URL
+```
+Create a `.env` file in the `frontend` directory:
+```env
+VITE_API_URL=http://localhost:5000
+VITE_SOCKET_URL=http://localhost:5000
+```
+Start the frontend:
+```bash
 npm run dev
 ```
 
 ---
 
-## 🔒 Security & Performance
-- **JWT Authentication**: Secure sessions using HttpOnly cookies to prevent XSS.
-- **Atomic Transactions**: MongoDB logic ensures hiring is a safe, all-or-nothing operation.
-- **Real-time Engine**: Optimized Socket.io rooms for minimal latency.
-- **Clean Code**: Modular architecture for easy scalability.
+## 🔒 Security & Architecture
+- **HttpOnly Cookies**: Protects against XSS attacks by storing JWTs securely.
+- **Atomic Operations**: MongoDB logic ensures that hiring processes are consistent and error-free.
+- **Modular Codebase**: Clean separation of concerns between controllers, models, and routes.
+- **Real-time Rooms**: Socket.io rooms ensure notifications are delivered only to the intended users.
 
 ---
 
 ## 🤝 Contributing
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+We welcome contributions! 
+1. **Fork** the repo.
+2. **Create** your feature branch.
+3. **Commit** your changes.
+4. **Push** to the branch.
+5. **Open** a Pull Request.
 
 ---
 
 ## 📄 License
-Distributed under the MIT License. See `LICENSE` for more information.
+This project is licensed under the **MIT License**.
 
 ---
 
-**Built with ❤️ by [Annu Rana](https://github.com/Annu881)**
+**Developed with passion by [Annu Rana](https://github.com/Annu881)**
