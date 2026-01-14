@@ -61,10 +61,28 @@ GigFlow is a sophisticated freelance marketplace platform that bridges the gap b
 ## 🏗️ Architecture
 
 ### System Workflow
-1. **Authentication**: Secure JWT-based login with HttpOnly cookies.
-2. **Real-time Layer**: Socket.io manages bidirectional communication for instant updates.
-3. **Data Layer**: Mongoose models with optimized schemas for Gigs, Bids, and Notifications.
-4. **Logic Layer**: Atomic hiring logic ensures that once a freelancer is hired, the gig status and all related bids are updated simultaneously.
+The following diagram illustrates the real-time interaction between Clients and Freelancers within the GigFlow ecosystem.
+
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant S as Server (Node/Express)
+    participant D as Database (MongoDB)
+    participant F as Freelancer
+
+    C->>S: Post New Gig
+    S->>D: Save Gig Data
+    S->>F: Socket.io: 'new_gig' Broadcast
+    F->>S: Submit Professional Bid
+    S->>D: Save Bid Data
+    C->>S: Hire Freelancer
+    Note over S,D: Atomic Transaction Starts
+    S->>D: Update Gig (Assigned)
+    S->>D: Update Bid (Hired)
+    S->>D: Reject Other Bids
+    Note over S,D: Atomic Transaction Commits
+    S->>F: Socket.io: 'hired' Private Event
+```
 
 ---
 
