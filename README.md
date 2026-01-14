@@ -13,7 +13,13 @@
 
 [Explore Docs](https://github.com/Annu881/GigFlow#api-documentation) · [Report Bug](https://github.com/Annu881/GigFlow/issues) · [Request Feature](https://github.com/Annu881/GigFlow/issues)
 
-</div>
+---
+
+## 🚀 Live Deployment
+- **Frontend**: [https://gigflow-oy2aenh8a-annus-projects-7bb8af93.vercel.app](https://gigflow-oy2aenh8a-annus-projects-7bb8af93.vercel.app)
+- **Backend API**: [https://gigflow-8hb1.onrender.com](https://gigflow-8hb1.onrender.com)
+
+---
 
 ---
 
