@@ -59,6 +59,11 @@ app.get('/api/health', (req, res) => {
     });
 });
 
+// Root route
+app.get('/', (req, res) => {
+    res.send('🚀 GigFlow API is live and running!');
+});
+
 // Error handler (must be last)
 app.use(errorHandler);
 
